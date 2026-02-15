@@ -1,0 +1,54 @@
+.header {
+    background-color: #003D82;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero {
+    background-color: #C41E3A;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.services {
+    padding: 50px;
+}
+
+.services h2 {
+    color: #003D82;
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 30%;
+    margin: 1%;
+    border: 3px solid #C41E3A;
+}
+
+.contact-form {
+    padding: 50px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .gallery img {
+        width: 100%;
+    }
+}
