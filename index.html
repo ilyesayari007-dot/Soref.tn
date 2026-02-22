@@ -3,46 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOREF - Société Rezgui Fluide</title>
-<style>
-body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f6f9;}
-header {background:#0d3b66; color:white; padding:20px; text-align:center;}
-section {padding:40px; text-align:center;}
-.services {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
-.card {background:white; padding:20px; width:250px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);}
-footer {background:#0d3b66; color:white; text-align:center; padding:20px;}
-.whatsapp {position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px 20px; border-radius:50px; text-decoration:none; font-weight:bold;}
-</style>
+<title>SOREF | Climatisation & Ventilation Industrielle</title>
+<meta name="description" content="Solutions professionnelles en climatisation, plomberie et ventilation industrielle.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<header>
-<h1>SOREF</h1>
-<p>Société Rezgui Fluide</p>
+<header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <img src="assets/images/logo.png" class="logo">
+        <h1>Solutions Professionnelles en Climatisation & Ventilation Industrielle</h1>
+        <a href="#devis" class="btn-primary">Demander un Devis</a>
+    </div>
 </header>
 
-<section>
-<h2>Nos Services</h2>
-<div class="services">
-<div class="card"><h3>Climatisation</h3><p>Installation et maintenance professionnelle.</p></div>
-<div class="card"><h3>Plomberie</h3><p>Solutions fiables et durables.</p></div>
-<div class="card"><h3>Chauffage</h3><p>Systèmes performants et économiques.</p></div>
-<div class="card"><h3>Ventilation</h3><p>Installation de gaines et systèmes industriels.</p></div>
-</div>
+<section class="services">
+    <h2>Nos Services</h2>
+    <div class="cards">
+        <div class="card">Climatisation</div>
+        <div class="card">Plomberie</div>
+        <div class="card">Chauffage</div>
+        <div class="card">Ventilation Industrielle</div>
+    </div>
 </section>
 
-<section>
-<h2>Contact</h2>
-<p>Email: soref2011@gmail.com</p>
-<p>Téléphone & WhatsApp: 55725217</p>
-<p>Adresse: 09 RUE 6238 EL OMRANE SUPERIEUR, CITE EL INTILAKA 1064, EL OMRANE, TUNISIE</p>
+<section class="gallery">
+    <h2>Nos Projets</h2>
+    <div class="grid">
+        <img src="assets/images/project1.jpg">
+        <img src="assets/images/project2.jpg">
+        <img src="assets/images/project3.jpg">
+        <img src="assets/images/project4.jpg">
+    </div>
+</section>
+
+<section class="stats">
+    <div>+10 Projets</div>
+    <div>+5 Ans Expérience</div>
+    <div>Intervention 24/7</div>
+    <div>Clients satisfaits</div>
+</section>
+
+<section id="devis" class="devis">
+    <h2>Demander un Devis</h2>
+    <form>
+        <input type="text" placeholder="Nom" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Votre demande"></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
 </section>
 
 <footer>
-© 2026 SOREF - Tous droits réservés
+    <p>© 2026 SOREF - Tous droits réservés</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/21655725217" target="_blank">WhatsApp</a>
-
+<script src="assets/js/main.js"></script>
 </body>
 </html>
