@@ -3,64 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOREF | Climatisation & Ventilation Industrielle</title>
-<meta name="description" content="Solutions professionnelles en climatisation, plomberie et ventilation industrielle.">
-<link rel="stylesheet" href="assets/css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
+<title>SOREF - Société Rezgui Fluide</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Poppins',sans-serif;background:#f4f6f9;color:#222}
+header{background:#0d3b66;color:white;padding:40px;text-align:center}
+header img{max-width:180px;margin-bottom:15px}
+section{padding:60px 20px;text-align:center}
+.services,.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:25px}
+.card{background:white;padding:25px;width:260px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);transition:0.3s}
+.card:hover{transform:translateY(-8px)}
+.gallery img{width:300px;border-radius:12px;box-shadow:0 6px 15px rgba(0,0,0,0.15)}
+form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px}
+input,select,textarea{padding:12px;border-radius:8px;border:1px solid #ccc}
+button{padding:12px;background:#0d3b66;color:white;border:none;border-radius:8px;cursor:pointer}
+button:hover{background:#092949}
+footer{background:#0d3b66;color:white;padding:25px;text-align:center}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 22px;border-radius:50px;text-decoration:none;font-weight:bold}
+h2{color:#0d3b66}
+</style>
 
+<script>
+function sendWhatsApp(){
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let service=document.getElementById("service").value;
+let message=document.getElementById("message").value;
+
+let text="Demande de Devis%0A"
++"Nom: "+name+"%0A"
++"Téléphone: "+phone+"%0A"
++"Service: "+service+"%0A"
++"Message: "+message;
+
+window.open("https://wa.me/21655725217?text="+text,"_blank");
+}
+</script>
+
+</head>
 <body>
 
-<header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-        <img src="assets/images/logo.png" class="logo">
-        <h1>Solutions Professionnelles en Climatisation & Ventilation Industrielle</h1>
-        <a href="#devis" class="btn-primary">Demander un Devis</a>
-    </div>
+<header>
+<img src="assets/noname.png" alt="SOREF Logo">
+<h1>SOREF</h1>
+<p>Solutions Professionnelles en Climatisation, Plomberie & Ventilation Industrielle</p>
 </header>
 
-<section class="services">
-    <h2>Nos Services</h2>
-    <div class="cards">
-        <div class="card">Climatisation</div>
-        <div class="card">Plomberie</div>
-        <div class="card">Chauffage</div>
-        <div class="card">Ventilation Industrielle</div>
-    </div>
+<section>
+<h2>Nos Services</h2>
+<div class="services">
+<div class="card"><h3>Climatisation</h3></div>
+<div class="card"><h3>Plomberie</h3></div>
+<div class="card"><h3>Chauffage</h3></div>
+<div class="card"><h3>Ventilation Industrielle</h3></div>
+</div>
 </section>
 
-<section class="gallery">
-    <h2>Nos Projets</h2>
-    <div class="grid">
-        <img src="assets/images/project1.jpg">
-        <img src="assets/images/project2.jpg">
-        <img src="assets/images/project3.jpg">
-        <img src="assets/images/project4.jpg">
-    </div>
+<section>
+<h2>Galerie de Nos Projets</h2>
+<div class="gallery">
+<img src="assets/images (10).jpeg">
+<img src="assets/images (5).jpeg">
+<img src="assets/images (9).jpeg">
+<img src="assets/images (2).jpeg">
+<img src="assets/images (3).jpeg">
+</div>
 </section>
 
-<section class="stats">
-    <div>+10 Projets</div>
-    <div>+5 Ans Expérience</div>
-    <div>Intervention 24/7</div>
-    <div>Clients satisfaits</div>
+<section>
+<h2>Demande de Devis</h2>
+<form onsubmit="event.preventDefault(); sendWhatsApp();">
+<input type="text" id="name" placeholder="Votre Nom" required>
+<input type="text" id="phone" placeholder="Votre Téléphone" required>
+<select id="service">
+<option>Climatisation</option>
+<option>Plomberie</option>
+<option>Chauffage</option>
+<option>Ventilation</option>
+</select>
+<textarea id="message" placeholder="Décrivez votre besoin"></textarea>
+<button type="submit">Envoyer sur WhatsApp</button>
+</form>
 </section>
 
-<section id="devis" class="devis">
-    <h2>Demander un Devis</h2>
-    <form>
-        <input type="text" placeholder="Nom" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Votre demande"></textarea>
-        <button type="submit">Envoyer</button>
-    </form>
+<section>
+<h2>Contact</h2>
+<p>Email: soref2011@gmail.com</p>
+<p>Téléphone & WhatsApp: +216 55725217</p>
+<p>Adresse: 09 RUE 6238 EL OMRANE SUPERIEUR, CITE EL INTILAKA 1064, EL OMRANE, TUNISIE</p>
 </section>
 
 <footer>
-    <p>© 2026 SOREF - Tous droits réservés</p>
+© 2026 SOREF - Société Rezgui Fluide - Tous droits réservés
 </footer>
 
-<script src="assets/js/main.js"></script>
+<a class="whatsapp" href="https://wa.me/21655725217" target="_blank">WhatsApp</a>
+
 </body>
 </html>
