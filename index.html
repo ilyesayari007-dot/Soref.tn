@@ -1,63 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOREF Company</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOREF - Société Rezgui Fluide</title>
+<style>
+body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f6f9;}
+header {background:#0d3b66; color:white; padding:20px; text-align:center;}
+section {padding:40px; text-align:center;}
+.services {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
+.card {background:white; padding:20px; width:250px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+footer {background:#0d3b66; color:white; text-align:center; padding:20px;}
+.whatsapp {position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px 20px; border-radius:50px; text-decoration:none; font-weight:bold;}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to SOREF Company</h1>
-        <nav>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#devis">Devis Form</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="services">
-            <h2>Our Services</h2>
-            <p>We provide a wide range of services to meet your needs, including:</p>
-            <ul>
-                <li>Consulting</li>
-                <li>Project Management</li>
-                <li>Software Development</li>
-                <li>Technical Support</li>
-            </ul>
-        </section>
-        <section id="gallery">
-            <h2>Gallery</h2>
-            <p>Take a look at our recent projects and achievements:</p>
-            <div class="gallery">
-                <img src="image1.jpg" alt="Project 1">
-                <img src="image2.jpg" alt="Project 2">
-                <img src="image3.jpg" alt="Project 3">
-            </div>
-        </section>
-        <section id="devis">
-            <h2>Request a Devis</h2>
-            <form action="#" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Email: info@soref.com</p>
-            <p>Phone: +123 456 7890</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 SOREF Company. All rights reserved.</p>
-    </footer>
+
+<header>
+<h1>SOREF</h1>
+<p>Société Rezgui Fluide</p>
+</header>
+
+<section>
+<h2>Nos Services</h2>
+<div class="services">
+<div class="card"><h3>Climatisation</h3><p>Installation et maintenance professionnelle.</p></div>
+<div class="card"><h3>Plomberie</h3><p>Solutions fiables et durables.</p></div>
+<div class="card"><h3>Chauffage</h3><p>Systèmes performants et économiques.</p></div>
+<div class="card"><h3>Ventilation</h3><p>Installation de gaines et systèmes industriels.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Contact</h2>
+<p>Email: soref2011@gmail.com</p>
+<p>Téléphone & WhatsApp: 55725217</p>
+<p>Adresse: 09 RUE 6238 EL OMRANE SUPERIEUR, CITE EL INTILAKA 1064, EL OMRANE, TUNISIE</p>
+</section>
+
+<footer>
+© 2026 SOREF - Tous droits réservés
+</footer>
+
+<a class="whatsapp" href="https://wa.me/21655725217" target="_blank">WhatsApp</a>
+
 </body>
 </html>
