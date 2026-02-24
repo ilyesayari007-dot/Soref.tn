@@ -3,143 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOREF | Plomberie, Chauffage & Climatisation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Société Rezgui Fluide | SOREF - Plomberie & Climatisation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --dark-blue: #0f172a; /* Bleu industriel foncé */
-            --accent-red: #dc2626; /* Rouge مطابق للشعار */
+            --dark-blue: #111827;
+            --main-blue: #1e3a8a;
+            --main-red: #be123c; /* Rouge مطابق للوجو */
             --white: #ffffff;
-            --gray: #94a3b8;
+            --light-gray: #f3f4f6;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-blue); color: var(--white); line-height: 1.6; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-blue); color: var(--white); overflow-x: hidden; }
 
-        /* --- NAVIGATION --- */
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-thumb { background: var(--main-red); border-radius: 5px; }
+
+        /* --- Navbar --- */
         nav {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 20px 8%; background: rgba(15, 23, 42, 0.9);
+            padding: 15px 8%; background: rgba(17, 24, 39, 0.95);
             position: fixed; width: 100%; top: 0; z-index: 2000;
-            backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 2px solid var(--main-blue);
         }
-        .logo { font-size: 28px; font-weight: 800; color: var(--accent-red); letter-spacing: 2px; }
-        .nav-links { display: flex; list-style: none; gap: 30px; }
-        .nav-links a { text-decoration: none; color: var(--white); font-weight: 600; font-size: 14px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent-red); }
+        .logo-img { height: 60px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); }
 
-        /* --- HERO SECTION --- */
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links a { text-decoration: none; color: var(--white); font-weight: 700; font-size: 14px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--main-red); }
+
+        /* --- Hero Section --- */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), 
-                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070') no-repeat center center/cover;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.8)), 
+                        url('https://images.unsplash.com/photo-1581094288338-2314dddb7ecb?q=80&w=1920') no-repeat center center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
         }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); text-transform: uppercase; margin-bottom: 15px; }
-        .hero span { color: var(--accent-red); }
-        .hero p { max-width: 600px; color: var(--gray); font-size: 1.1rem; margin-bottom: 30px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .hero span { color: var(--main-red); text-shadow: 2px 2px var(--main-blue); }
+        .hero p { max-width: 800px; font-size: 1.2rem; color: #d1d5db; margin-bottom: 35px; font-style: italic; }
 
-        /* --- SERVICES --- */
-        .section { padding: 80px 10%; text-align: center; }
-        .section-title { font-size: 2.5rem; margin-bottom: 50px; position: relative; }
-        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--accent-red); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        /* --- Presentation Section (L'expertise) --- */
+        .about { padding: 80px 10%; background: var(--white); color: var(--dark-blue); }
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; }
+        .about-text h2 { color: var(--main-blue); font-size: 2.5rem; margin-bottom: 20px; }
+        .about-text p { font-size: 1.1rem; line-height: 1.8; color: #4b5563; }
 
-        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { 
-            background: #1e293b; padding: 40px; border-radius: 15px; 
-            transition: 0.4s ease; border: 1px solid rgba(255,255,255,0.05);
-        }
-        .card:hover { transform: translateY(-10px); background: #2a384e; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .card i { font-size: 50px; color: var(--accent-red); margin-bottom: 20px; }
+        /* --- Gallery Section --- */
+        .gallery { padding: 80px 5%; text-align: center; }
+        .gallery h2 { margin-bottom: 50px; font-size: 2.5rem; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 12px; height: 300px; border: 3px solid var(--main-blue); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1) rotate(2deg); }
+        .gallery-item .overlay { position: absolute; bottom: 0; background: rgba(190, 18, 60, 0.8); width: 100%; padding: 10px; color: white; font-weight: bold; }
 
-        /* --- GALLERY --- */
-        .grid-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-        .gallery-img { 
-            width: 100%; height: 250px; object-fit: cover; border-radius: 10px; 
-            filter: grayscale(30%); transition: 0.5s; cursor: pointer;
-        }
-        .gallery-img:hover { filter: grayscale(0%); transform: scale(1.02); }
-
-        /* --- CONTACT --- */
-        .contact-box { background: #1e293b; padding: 50px; border-radius: 20px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-around; }
-        .info-item { text-align: center; }
-        .info-item i { font-size: 30px; color: var(--accent-red); margin-bottom: 10px; display: block; }
-        .info-item a { color: var(--white); text-decoration: none; font-size: 1.2rem; font-weight: 600; }
-
-        /* --- FOOTER & FLOATING WHATSAPP --- */
-        footer { padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); color: var(--gray); font-size: 14px; }
-        
-        .whatsapp-btn {
+        /* --- WhatsApp & Footer --- */
+        .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px; background: #25d366;
-            color: white; width: 65px; height: 65px; border-radius: 50%;
-            display: flex; justify-content: center; align-items: center; font-size: 35px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 3000; transition: 0.4s;
+            width: 70px; height: 70px; border-radius: 50%; display: flex;
+            justify-content: center; align-items: center; font-size: 40px;
+            color: white; box-shadow: 0 10px 20px rgba(0,0,0,0.4); z-index: 3000; transition: 0.3s;
         }
-        .whatsapp-btn:hover { transform: rotate(360deg) scale(1.1); }
+        .whatsapp-float:hover { transform: scale(1.1) rotate(15deg); }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.2rem; }
-        }
+        footer { padding: 40px; text-align: center; background: #0a0f1a; border-top: 4px solid var(--main-red); }
+
+        @media (max-width: 768px) { .nav-links { display: none; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">SOREF</div>
+        <img src="https://i.ibb.co/v6y8mP8/logo-rezgui.png" alt="Société Rezgui Fluide" class="logo-img">
         <ul class="nav-links">
             <li><a href="#accueil">ACCUEIL</a></li>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#galerie">GALERIE</a></li>
+            <li><a href="#expertise">EXPERTISE</a></li>
+            <li><a href="#projets">RÉALISATIONS</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
 
     <section class="hero" id="accueil">
-        <h1><span>SOREF</span> EXPERTISE</h1>
-        <p>Plomberie, Chauffage Central, Climatisation & Ventilation. Solutions professionnelles pour l'industrie et le bâtiment.</p>
-        <a href="#contact" style="background: var(--accent-red); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold;">NOS SERVICES</a>
+        <h1>Société <span>Rezgui Fluide</span></h1>
+        <p>"L'excellence dans la maîtrise des fluides : Plomberie, Chauffage Central, Climatisation et Ventilation au service de votre confort."</p>
+        <a href="https://wa.me/21655725217" class="btn" style="background: var(--main-red); color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 900; letter-spacing: 1px;">DEVIS GRATUIT</a>
     </section>
 
-    <section class="section" id="services">
-        <h2 class="section-title">Nos Services</h2>
-        <div class="grid-services">
-            <div class="card"><i class="fas fa-tools"></i><h3>Plomberie</h3><p>Installation et maintenance sanitaire industrielle.</p></div>
-            <div class="card"><i class="fas fa-fire"></i><h3>Chauffage</h3><p>Chauffage central et maintenance de chaudières.</p></div>
-            <div class="card"><i class="fas fa-snowflake"></i><h3>Climatisation</h3><p>Systèmes VRV, Split et gainable.</p></div>
-            <div class="card"><i class="fas fa-fan"></i><h3>Ventilation</h3><p>Extraction d'air et VMC professionnelle.</p></div>
-        </div>
-    </section>
-
-    <section class="section" id="galerie" style="background: rgba(0,0,0,0.2);">
-        <h2 class="section-title">Nos Réalisations</h2>
-        <div class="grid-gallery">
-            <img src="https://images.unsplash.com/photo-1585338107529-13afc5f02586?q=80&w=1000" class="gallery-img" alt="Chantier SOREF">
-            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1000" class="gallery-img" alt="HVAC SOREF">
-            <img src="https://images.unsplash.com/photo-1599939331505-efd4a559571c?q=80&w=1000" class="gallery-img" alt="Installation">
-        </div>
-    </section>
-
-    <section class="section" id="contact">
-        <h2 class="section-title">Contactez-nous</h2>
-        <div class="contact-box">
-            <div class="info-item">
-                <i class="fas fa-phone"></i>
-                <a href="tel:+21655725217">(+216) 55 725 217</a>
+    <section class="about" id="expertise">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Votre Partenaire de Confiance</h2>
+                <p>
+                    <strong>Société Rezgui Fluide (SOREF)</strong> est leader dans l'installation et la maintenance technique en Tunisie. 
+                    Nous transformons vos projets en réalités durables grâce à une expertise pointue en 
+                    <strong>chauffage central, climatisation VRV/Multi-split, et ventilation industrielle</strong>. 
+                    <br><br>
+                    Que ce soit pour un chantier de construction ou une rénovation domestique, notre équipe garantit une finition irréprochable et un respect strict des normes de sécurité.
+                </p>
             </div>
-            <div class="info-item">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:soref2011@gmail.com">soref2011@gmail.com</a>
+            <img src="https://i.ibb.co/VvYf4mK/work1.jpg" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);" alt="Expertise Rezgui Fluide">
+        </div>
+    </section>
+
+    <section class="gallery" id="projets">
+        <h2>Nos Réalisations sur Terrain</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/W2zY3fP/plomberie.jpg" alt="Plomberie">
+                <div class="overlay">Plomberie Sanitaire</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/xY1Xn4N/clim.jpg" alt="Climatisation">
+                <div class="overlay">Installation Climatisation</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/M7X1z9j/chauffage.jpg" alt="Chauffage">
+                <div class="overlay">Chauffage Central</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/G3Xy5pB/ventilation.jpg" alt="Ventilation">
+                <div class="overlay">Ventilation & VMC</div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 SOREF - Tous droits réservés.</p>
+    <footer id="contact">
+        <h2 style="margin-bottom: 20px;">Contact Officiel</h2>
+        <p><i class="fas fa-envelope"></i> soref2011@gmail.com</p>
+        <p style="margin-top: 10px;"><i class="fas fa-phone"></i> +216 55 725 217</p>
+        <p style="margin-top: 30px; font-size: 12px; color: var(--gray);">&copy; 2024 Société Rezgui Fluide. Pro-Design by Gemini.</p>
     </footer>
 
-    <a href="https://wa.me/21655725217" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/21655725217" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
