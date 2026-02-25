@@ -74,4 +74,185 @@
         .footer-logo { font-size: 2rem; font-family: 'Oswald'; margin-bottom: 15px; }
         .footer-logo span { color: var(--soref-red); }
         
-        .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%;
+        .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; color: white; z-index: 3000; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        @media (max-width: 768px) { .project-detail-box { flex-direction: column; } .hero h1 { font-size: 2.2rem; } }
+    </style>
+</head>
+<body>
+
+    <div class="social-sidebar">
+        <a href="#" class="social-fb"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-ig"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <header>
+        <a href="#" class="nav-brand">SO<span>REF</span></a>
+        <div>
+            <a href="tel:+21655725217" style="color: var(--soref-blue); font-weight: 700; text-decoration: none; margin-right: 20px;">
+                <i class="fa fa-phone"></i> 55 725 217
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>MAÎTRISE DES FLUIDES & GÉNIE THERMIQUE</h1>
+            <p>Expertise certifiée au service des promoteurs et industriels depuis 2012.</p>
+        </div>
+    </section>
+
+    <section class="container about-section">
+        <div class="about-item" data-aos="fade-up">
+            <i class="fas fa-users"></i>
+            <h3>Capital Humain</h3>
+            <p>Équipe de 12 permanents et 20+ techniciens experts pour les grands chantiers.</p>
+        </div>
+        <div class="about-item" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-tools"></i>
+            <h3>Équipements</h3>
+            <p>Outillages sophistiqués et machines frigorifiques de contrôle électronique.</p>
+        </div>
+        <div class="about-item" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-warehouse"></i>
+            <h3>Logistique</h3>
+            <p>Magasin de stock permanent pour garantir la continuité des travaux.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="section-header" data-aos="fade-right">
+            <h2>Nos Domaines d'<span>Expertise</span></h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-box" data-aos="fade-up">
+                <i class="fas fa-snowflake"></i>
+                <h3>Génie Climatique</h3>
+                <ul>
+                    <li>Systèmes VRV / VRF</li>
+                    <li>Climatisation Gainable</li>
+                    <li>Ventilation & Désenfumage</li>
+                </ul>
+            </div>
+            <div class="service-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-faucet"></i>
+                <h3>Plomberie & Fluides</h3>
+                <ul>
+                    <li>Réseaux Sanitaires</li>
+                    <li>Surpresseurs & Pompage</li>
+                    <li>Évacuations complexes</li>
+                </ul>
+            </div>
+            <div class="service-box" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-fire-alt"></i>
+                <h3>Chauffage Central</h3>
+                <ul>
+                    <li>Plancher chauffant</li>
+                    <li>Chaudières Gaz/Hybride</li>
+                    <li>Réseaux de radiateurs</li>
+                </ul>
+            </div>
+            <div class="service-box" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-swimmer"></i>
+                <h3>Traitement d'Eau</h3>
+                <ul>
+                    <li>Locaux techniques Piscines</li>
+                    <li>Filtration & Adoucisseurs</li>
+                    <li>Régulation Électrique</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="background: var(--light-bg);">
+        <div class="section-header" data-aos="fade-right">
+            <h2>Références <span>Stratégiques</span></h2>
+        </div>
+
+        <div class="project-detail-box" data-aos="fade-up">
+            <div class="project-meta"><h4>2025</h4><p>EN COURS</p></div>
+            <div class="project-info">
+                <h3>RÉSIDENCE LE PATIO</h3>
+                <p><strong>Lieu:</strong> La Soukra, Tunis | <strong>Promoteur:</strong> NEW CITY IMMOBILIERE</p>
+                <p>Installation plomberie et climatisation gainable réversible avec diffuseurs linéaires.</p>
+                <div class="tag-container">
+                    <span class="tag">CVC</span> <span class="tag">GAINABLE</span> <span class="tag">EXTRACTION</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-detail-box" data-aos="fade-up">
+            <div class="project-meta"><h4>RÉALISÉ</h4><p>OFFICE</p></div>
+            <div class="project-info">
+                <h3>IMMEUBLE KARRAY</h3>
+                <p><strong>Lieu:</strong> Les Berges du Lac, Tunis</p>
+                <p>Installation complète des systèmes de chauffage et climatisation centralisée.</p>
+                <div class="tag-container">
+                    <span class="tag">VRV</span> <span class="tag">CHAUFFAGE</span> <span class="tag">INCENDIE</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-detail-box" data-aos="fade-up">
+            <div class="project-meta"><h4>RÉALISÉ</h4><p>PRESTIGE</p></div>
+            <div class="project-info">
+                <h3>VILLAS INDIVIDUELLES</h3>
+                <p><strong>Lieu:</strong> Gammarth & La Marsa</p>
+                <p>Pose de planchers chauffants, climatisation VRV et équipements locaux techniques piscine.</p>
+                <div class="tag-container">
+                    <span class="tag">PISCINE</span> <span class="tag">PLANCHER CHAUFFANT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="section-header" data-aos="fade-right">
+            <h2>Galerie <span>Technique</span></h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://i.ibb.co/4ZQjRvZm/1.jpg"></div>
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://i.ibb.co/LysRvFk/2.jpg"></div>
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://i.ibb.co/xSfM3D1R/3.jpg"></div>
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://i.ibb.co/fzjXHq57/4.jpg"></div>
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://i.ibb.co/n8j2JRZB/5.jpg"></div>
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://i.ibb.co/vG6LJDQ/6.jpg"></div>
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://i.ibb.co/0jn8JrsG/7.jpg"></div>
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://i.ibb.co/XZBhkSkj/8.jpg"></div>
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://i.ibb.co/4n1zPcyM/9.jpg"></div>
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://i.ibb.co/zVQX8Tjd/10.jpg"></div>
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://i.ibb.co/Q3ZBvCRb/11.jpg"></div>
+            <div class="gallery-item" data-aos="zoom-in"><img src="https://i.ibb.co/5g9D2Mgf/12.jpg"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">SO<span>REF</span></div>
+                <p>Depuis 2012, nous sommes votre partenaire de confiance en génie thermique et hydraulique en Tunisie.</p>
+            </div>
+            <div>
+                <h4 style="font-family: 'Oswald'; margin-bottom: 20px;">CONTACT & ADRESSE</h4>
+                <p><i class="fas fa-map-marker-alt" style="color: var(--soref-red);"></i> <strong>Siège Social:</strong> Cité Ennozha, Ariana, Tunisie</p>
+                <p style="margin-top: 10px;"><i class="fas fa-phone" style="color: var(--soref-red);"></i> +216 55 725 217</p>
+                <p style="margin-top: 10px;"><i class="fas fa-envelope" style="color: var(--soref-red);"></i> soref2011@gmail.com</p>
+            </div>
+            <div>
+                <h4 style="font-family: 'Oswald'; margin-bottom: 20px;">HORAIRES D'OUVERTURE</h4>
+                <p>Lun - Ven : 08:00 - 17:00</p>
+                <p>Samedi : 08:00 - 13:00</p>
+            </div>
+        </div>
+        <div style="margin-top: 50px; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid #222; padding-top: 20px; text-align: center;">
+            &copy; 2025 SOREF TUNISIE. Tous droits réservés.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/21655725217" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script> AOS.init({ duration: 800, once: true }); </script>
+
+</body>
+</html>
