@@ -3,174 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOREF | Société Rezgui Fluide - Excellence Industrielle</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <title>SOREF | Société Rezgui Fluide - Plomberie & HVAC</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        /* --- الألوان الصناعية الفخمة --- */
         :root {
-            --bg-dark: #020617;
-            --card-bg: #0f172a;
-            --primary-red: #e11d48;
-            --primary-blue: #2563eb;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --gold-accent: #f59e0b;
+            --dark-navy: #0f172a;
+            --pro-red: #e11d48;
+            --pro-blue: #2563eb;
+            --steel: #f8fafc;
+            --gray-text: #94a3b8;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-dark); 
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--dark-navy); color: var(--steel); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
 
-        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* --- Custom Header --- */
+        /* --- Navbar --- */
         nav {
-            padding: 20px 8%;
             display: flex; justify-content: space-between; align-items: center;
-            background: rgba(2, 6, 23, 0.9);
-            backdrop-filter: blur(15px);
+            padding: 15px 8%; background: rgba(15, 23, 42, 0.95);
             position: fixed; width: 100%; top: 0; z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 2px solid var(--pro-red);
         }
-        .logo-box { display: flex; align-items: center; gap: 15px; }
-        .logo-text { font-size: 1.8rem; font-weight: 700; color: #fff; }
-        .logo-text span { color: var(--primary-red); }
+        .logo-text { font-size: 24px; font-weight: 700; color: #fff; letter-spacing: 2px; }
+        .logo-text span { color: var(--pro-red); }
 
         /* --- Hero Section --- */
         .hero {
             height: 100vh;
-            display: flex; align-items: center; justify-content: center;
-            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.1) 0%, rgba(2, 6, 23, 1) 100%),
-                        url('https://www.shutterstock.com/shutterstock/photos/1930353164/display_1500/stock-photo-hvac-technician-installing-new-air-conditioning-system-1930353164.jpg');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            text-align: center; padding: 20px;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1500');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            padding: 0 20px;
         }
-        .hero-content { max-width: 900px; animation: fadeInUp 1s ease; }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1; margin-bottom: 20px; }
-        .hero p { font-size: 1.25rem; color: var(--text-dim); margin-bottom: 40px; font-weight: 300; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 15px; }
+        .hero span { color: var(--pro-red); }
+        .hero p { font-size: 1.2rem; color: var(--gray-text); max-width: 700px; margin-bottom: 30px; }
 
-        .cta-btn {
-            background: var(--primary-red);
-            color: white; padding: 18px 40px; border-radius: 4px;
-            text-decoration: none; font-weight: 700; transition: 0.3s;
-            display: inline-block; border: 2px solid var(--primary-red);
+        .btn-main {
+            background: var(--pro-red); color: white; padding: 15px 40px;
+            text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s;
+            border: 2px solid var(--pro-red);
         }
-        .cta-btn:hover { background: transparent; color: var(--primary-red); }
+        .btn-main:hover { background: transparent; color: var(--pro-red); }
 
-        /* --- Gallery Section --- */
-        .gallery-container { padding: 100px 8%; background: #020623; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; }
-        .section-header .line { width: 80px; height: 4px; background: var(--primary-red); margin: 0 auto; }
+        /* --- Gallery (Réalisations) --- */
+        .section { padding: 80px 8%; }
+        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 50px; }
+        .section-title span { border-bottom: 4px solid var(--pro-red); }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
         }
-        .gallery-card {
-            position: relative; overflow: hidden; border-radius: 8px; height: 350px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        .gallery-item {
+            position: relative; overflow: hidden; border-radius: 10px; height: 300px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        .gallery-card img {
-            width: 100%; height: 100%; object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item .label {
+            position: absolute; bottom: 0; width: 100%; background: rgba(225, 29, 72, 0.9);
+            padding: 10px; text-align: center; font-weight: bold;
         }
-        .gallery-card:hover img { transform: scale(1.15); }
-        .gallery-card .info {
-            position: absolute; bottom: 0; left: 0; right: 0;
-            padding: 30px 20px; background: linear-gradient(transparent, rgba(0,0,0,0.9));
-            opacity: 0; transition: 0.4s;
-        }
-        .gallery-card:hover .info { opacity: 1; }
 
         /* --- Stats --- */
-        .stats { display: flex; justify-content: space-around; padding: 60px 8%; background: var(--card-bg); flex-wrap: wrap; gap: 30px; }
-        .stat-item h3 { font-size: 3rem; color: var(--primary-red); }
-        .stat-item p { color: var(--text-dim); text-transform: uppercase; font-size: 0.9rem; }
+        .stats { display: flex; justify-content: space-around; background: #1e293b; padding: 50px; flex-wrap: wrap; gap: 20px; }
+        .stat-card { text-align: center; }
+        .stat-card h3 { font-size: 2.5rem; color: var(--pro-red); }
 
         /* --- Floating WhatsApp --- */
-        .wa-float {
-            position: fixed; bottom: 30px; right: 30px;
-            background: #25d366; color: #fff; width: 65px; height: 65px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); z-index: 1000;
+        .whatsapp-fix {
+            position: fixed; bottom: 30px; right: 30px; background: #25d366;
+            width: 65px; height: 65px; border-radius: 50%; display: flex;
+            justify-content: center; align-items: center; font-size: 35px;
+            color: white; z-index: 2000; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            text-decoration: none; transition: 0.3s;
         }
+        .whatsapp-fix:hover { transform: scale(1.1); }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .stats { flex-direction: column; text-align: center; }
-        }
+        footer { background: #020617; padding: 40px; text-align: center; border-top: 1px solid var(--pro-red); }
+        
+        @media (max-width: 768px) { .nav-links { display: none; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo-box">
-            <div class="logo-text">S<span>O</span>REF</div>
-        </div>
-        <div style="color: var(--text-dim); font-weight: 600; font-size: 0.9rem;" class="hidden-mobile">
-            <i class="fa fa-phone color-red"></i> +216 55 725 217
-        </div>
+        <div class="logo-text">S<span>O</span>REF</div>
+        <div style="font-weight: bold;"><i class="fa fa-phone"></i> 55 725 217</div>
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>SOCIÉTÉ <span style="color: var(--primary-red);">REZGUI</span> FLUIDE</h1>
-            <p>Experts en solutions thermiques, hydrauliques et climatisation industrielle. Nous maîtrisons l'énergie pour votre confort.</p>
-            <a href="https://wa.me/21655725217" class="cta-btn">PARLER À UN EXPERT</a>
-        </div>
+        <h1>SOCIÉTÉ <span>REZGUI</span> FLUIDE</h1>
+        <p>L'excellence dans la maîtrise des fluides : Plomberie, Chauffage, Climatisation & Ventilation.</p>
+        <a href="https://wa.me/21655725217" class="btn-main">CONTACTER UN EXPERT</a>
     </section>
 
     <div class="stats">
-        <div class="stat-item"><h3>12+</h3><p>Ans d'Expérience</p></div>
-        <div class="stat-item"><h3>500+</h3><p>Projets Terminés</p></div>
-        <div class="stat-item"><h3>24/7</h3><p>Maintenance & SAV</p></div>
-        <div class="stat-item"><h3>100%</h3><p>Qualité Garantie</p></div>
+        <div class="stat-card"><h3>15+</h3><p>ANS D'EXPÉRIENCE</p></div>
+        <div class="stat-card"><h3>500+</h3><p>PROJETS RÉUSSIS</p></div>
+        <div class="stat-card"><h3>100%</h3><p>QUALITÉ TUNISIENNE</p></div>
     </div>
 
-    <section class="gallery-container">
-        <div class="section-header">
-            <h2>Nos Réalisations Techniques</h2>
-            <div class="line"></div>
-        </div>
-        
+    <section class="section">
+        <h2 class="section-title">Nos <span>Réalisations</span></h2>
         <div class="gallery-grid">
-            <div class="gallery-card">
-                <img src="https://i.ibb.co/VvYf4mK/work1.jpg" alt="Chauffage">
-                <div class="info"><h3>Chauffage Central</h3><p>Installation de chaudières et réseaux cuivre.</p></div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/VvYf4mK/work1.jpg" alt="Plomberie">
+                <div class="label">Chauffage Central</div>
             </div>
-            <div class="gallery-card">
-                <img src="https://i.ibb.co/W2zY3fP/plomberie.jpg" alt="Plomberie">
-                <div class="info"><h3>Tuyauterie Industrielle</h3><p>Maîtrise des flux et soudures haute précision.</p></div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/W2zY3fP/plomberie.jpg" alt="Installation">
+                <div class="label">Tuyauterie Industrielle</div>
             </div>
-            <div class="gallery-card">
-                <img src="https://i.ibb.co/xY1Xn4N/clim.jpg" alt="Clim">
-                <div class="info"><h3>Climatisation VRV</h3><p>Solutions de refroidissement pour grands espaces.</p></div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/xY1Xn4N/clim.jpg" alt="Climatisation">
+                <div class="label">Climatisation Pro</div>
             </div>
-            <div class="gallery-card">
-                <img src="https://i.ibb.co/M7X1z9j/chauffage.jpg" alt="Installation">
-                <div class="info"><h3>Maintenance HVAC</h3><p>Suivi rigoureux des équipements thermiques.</p></div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/M7X1z9j/chauffage.jpg" alt="Chauffage">
+                <div class="label">Maintenance Fluides</div>
             </div>
-            </div>
+        </div>
     </section>
 
-    <footer style="padding: 60px 8%; background: #010413; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
-        <h2 style="color: var(--primary-red); margin-bottom: 20px;">SOCIÉTÉ REZGUI FLUIDE</h2>
-        <p style="color: var(--text-dim);">Email: soref2011@gmail.com | Tel: +216 55 725 217</p>
-        <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 SOREF. Powered by Excellence.</p>
+    <footer>
+        <p><strong>SOREF - Société Rezgui Fluide</strong></p>
+        <p>Email: soref2011@gmail.com | Tel: +216 55 725 217</p>
+        <p style="margin-top: 20px; opacity: 0.5;">&copy; 2026 Tous droits réservés.</p>
     </footer>
 
-    <a href="https://wa.me/21655725217" class="wa-float" target="_blank">
+    <a href="https://wa.me/21655725217" class="whatsapp-fix" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
