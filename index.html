@@ -3,6 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOREF | Ingénierie des Fluides & Génie Thermique</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+        :root {
+            --soref-blue: #003366;
+            --soref-red: #E31E24;
+            --dark-blue: #002244;
+            --light-bg: #f8fbfd;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.7; background: var(--white); }
+        h1, h2, h3, .nav-brand { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- Global Components --- */
+        .container { padding: 80px 10%; }
+        .section-header { margin-bottom: 50px; border-left: 6px solid var(--soref-red); padding-left: 20px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--soref-blue); }
+        .accent { color: var(--soref-red); }
+
+        /* --- Header --- */
+        header {
+            padding: 20px 10%; background: var(--white); display: flex; 
+            justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 2000; box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .nav-brand { font-size: 28px; color: var(--soref-blue); font-weight: 700; }
+        .nav-brand span { color: var(--soref-red); }
+
+        /* --- Hero --- */
+        .hero {
+            height: 60vh; background: linear-gradient(rgba(0,34,68,0.9), rgba(0,34,68,0.8)), url('https://i.ibb.co/VczSkjmb/9.jpg');
+            background-size: cover; background-position: center; display: flex; align-items: center; color: white;
+        }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero-content p { font-size: 1.2rem; max-width: 700px; opacity: 0.9; }
+
+        /* --- Services Details --- */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-box { background: var(--light-bg); padding: 40px; border-radius: 4px; transition: 0.3s; }
+        .service-box:hover { background: var(--white); box-shadow: 0 20px 40px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        .service-box i { font-size: 35px; color: var(--soref-red); margin-bottom: 20px; }
+        .service-box h3 { margin-bottom: 15px; color: var(--soref-blue); font-size: 1.4rem; }
+        .service-box ul { list-style: none; font-size: 0.95rem; color: #555; }
+        .service-box ul li { margin-bottom: 8px; position: relative; padding-left: 20px; }
+        .service-box ul li::before { content: "→"; position: absolute; left: 0; color: var(--soref-red); }
+
+        /* --- Projects Detail Section --- */
+        .projects-detail-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .project-card { 
+            display: grid; grid-template-columns: 1fr 2fr; background: #fff; 
+            border: 1px solid #eee; overflow: hidden;
+        }
+        .project-meta { background: var(--soref-blue); color: white; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+        .project-info { padding: 40px; }
+        .project-info h3 { color: var(--soref-blue); font-size: 1.8rem; margin-bottom: 15px; border-bottom: 2px solid var(--gray-light); }
+        .task-tag { display: inline-block; background: #f0f0f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin: 5px; color: var(--soref-blue); font-weight: 600; }
+
+        /* --- Footer --- */
+        footer { background: var(--dark-blue); color: white; padding: 60px 10%; text-align: center; }
+        
+        @media (max-width: 900px) {
+            .project-card { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-brand">SO<span>REF</span></div>
+        <div class="contact-info">
+            <a href="tel:+21655725217" style="text-decoration: none; color: var(--soref-blue); font-weight: 700;">
+                <i class="fa fa-phone"></i> (+216) 55 725 217
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-right">
+                <h1>Ingénierie & Solutions <span class="accent">Fluides</span></h1>
+                <p>Depuis 2012, SOREF accompagne les promoteurs immobiliers et les industriels dans la conception et l'installation de systèmes thermiques complexes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Nos Domaines d'Excellence</h2>
+            <p>Une expertise technique complète pour des bâtiments intelligents et performants.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-box" data-aos="fade-up">
+                <i class="fas fa-snowflake"></i>
+                <h3>Génie Climatique (CVC)</h3>
+                <ul>
+                    <li>Systèmes VRV / VRF à haut rendement</li>
+                    <li>Climatisation centralisée (Gainable & Cassette)</li>
+                    <li>Traitement d'air et Désenfumage mécanique</li>
+                    <li>Ventilation double flux (VMC)</li>
+                </ul>
+            </div>
+            
+            <div class="service-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-faucet"></i>
+                <h3>Plomberie & Sanitaire</h3>
+                <ul>
+                    <li>Réseaux d'alimentation en PEHD et Cuivre</li>
+                    <li>Évacuation des eaux usées et pluviales</li>
+                    <li>Surpresseurs et Groupes de pompage</li>
+                    <li>Équipements sanitaires haut de gamme</li>
+                </ul>
+            </div>
+
+            <div class="service-box" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-fire-alt"></i>
+                <h3>Énergie Thermique</h3>
+                <ul>
+                    <li>Chauffage central par radiateurs</li>
+                    <li>Chauffage par le sol (Plancher chauffant)</li>
+                    <li>Chaudières gaz et systèmes hybrides</li>
+                    <li>Production d'eau chaude sanitaire (ECS)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="background: var(--light-bg);">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Références <span class="accent">Stratégiques</span></h2>
+            <p>Découvrez les détails techniques de nos interventions majeures.</p>
+        </div>
+
+        <div class="projects-detail-grid">
+            
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-meta">
+                    <h4>JANVIER 2025</h4>
+                    <p>PROJET EN COURS</p>
+                </div>
+                <div class="project-info">
+                    <h3>Résidence LE PATIO - La Soukra</h3>
+                    <p style="margin-bottom: 15px;">Intervention complète pour le compte de <strong>NEW CITY IMMOBILIERE</strong>. Un projet résidentiel de haut standing nécessitant une précision absolue.</p>
+                    <div class="task-list">
+                        <span class="task-tag">Plomberie Sanitaire</span>
+                        <span class="task-tag">Climatisation Mono-split Gainable</span>
+                        <span class="task-tag">Diffuseurs Linéaires</span>
+                        <span class="task-tag">Extraction Mécanique</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-meta">
+                    <h4>RÉALISÉ</h4>
+                    <p>LES BERGES DU LAC</p>
+                </div>
+                <div class="project-info">
+                    <h3>Immeuble KARRAY</h3>
+                    <p style="margin-bottom: 15px;">Installation de systèmes de régulation thermique pour un complexe de bureaux. Focus sur l'efficacité énergétique et le confort acoustique.</p>
+                    <div class="task-list">
+                        <span class="task-tag">Chauffage Central</span>
+                        <span class="task-tag">Climatisation Multi-split</span>
+                        <span class="task-tag">Réseau Incendie</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-meta">
+                    <h4>RÉALISÉ</h4>
+                    <p>SANTÉ & CLINIQUE</p>
+                </div>
+                <div class="project-info">
+                    <h3>Clinique Taoufik</h3>
+                    <p style="margin-bottom: 15px;">Travaux complexes de rénovation des réseaux fluides en milieu hospitalier. Respect strict des normes d'hygiène et de sécurité.</p>
+                    <div class="task-list">
+                        <span class="task-tag">Rénovation Plomberie</span>
+                        <span class="task-tag">Traitement d'eau</span>
+                        <span class="task-tag">Maintenance Curative</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <h2 style="margin-bottom: 10px;">SOREF TUNISIE</h2>
+        <p>Expert en Fluides, Chauffage et Climatisation depuis 2012.</p>
+        <div style="margin-top: 20px; opacity: 0.7; font-size: 0.9rem;">
+            &copy; 2025 SOREF. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script> AOS.init({ duration: 1000, once: true }); </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOREF | Excellence en Génie Thermique & Fluides</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
