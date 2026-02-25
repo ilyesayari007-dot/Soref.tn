@@ -3,142 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOREF | Société Rezgui Fluide</title>
+    <title>SOREF | Société Rezgui Fluide - Plomberie & HVAC</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --soref-blue: #003366; /* الأزرق الملكي الصناعي */
-            --soref-red: #E31E24;  /* الأحمر الناري متاع الشعار */
+            --soref-blue: #003366; /* الأزرق الملكي من الشعار */
+            --soref-red: #E31E24;  /* الأحمر الناري من الشعار */
             --white: #ffffff;
-            --dark-bg: #0a0a0a;
+            --bg-light: #f8fafc;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--white); color: #333; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--white); color: #333; scroll-behavior: smooth; }
 
         /* --- Navbar --- */
         header {
-            background: var(--soref-blue);
+            background: var(--white);
             padding: 10px 5%;
             display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 5px solid var(--soref-red);
+            border-bottom: 4px solid var(--soref-blue);
             position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         
-        .logo-container { display: flex; align-items: center; gap: 10px; }
-        
-        /* تصميم الشعار بالكود لضمان ظهوره */
-        .logo-icon {
-            width: 50px; height: 50px;
-            background: conic-gradient(var(--soref-red) 0deg 180deg, var(--soref-blue) 180deg 360deg);
-            border-radius: 50%;
-            border: 3px solid white;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: bold; color: white; font-size: 12px;
-        }
-        .logo-text { color: white; font-family: 'Oswald', sans-serif; font-size: 26px; }
-        .logo-text span { color: var(--soref-red); }
+        .logo-box { display: flex; align-items: center; gap: 12px; }
+        .logo-img { height: 55px; width: auto; }
+        .logo-text { font-family: 'Oswald', sans-serif; font-size: 24px; color: var(--soref-blue); line-height: 1; }
+        .logo-text span { color: var(--soref-red); display: block; font-size: 16px; letter-spacing: 1px; }
 
         /* --- Hero Section --- */
         .hero {
-            height: 85vh;
-            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 5, 10, 0.9)), 
-                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1500');
+            height: 70vh;
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1581094288338-2314dddb7ecb?auto=format&fit=crop&q=80&w=1500');
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; color: white; padding: 20px;
         }
-        .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 15px; }
+        .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 6vw, 4rem); margin-bottom: 10px; }
         .hero h1 span { color: var(--soref-red); }
-        .hero p { font-size: 1.2rem; max-width: 750px; margin-bottom: 35px; opacity: 0.9; }
-        
-        .btn-call {
-            background: var(--soref-red); color: white; padding: 18px 40px;
-            text-decoration: none; font-weight: bold; border-radius: 50px;
-            font-size: 1.1rem; box-shadow: 0 5px 15px rgba(227, 30, 36, 0.4);
-            transition: 0.3s;
-        }
-        .btn-call:hover { transform: translateY(-3px); background: white; color: var(--soref-blue); }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin-bottom: 30px; font-weight: 300; }
+        .btn-contact { background: var(--soref-red); color: white; padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
+        .btn-contact:hover { background: var(--soref-blue); }
+
+        /* --- Presentation Section --- */
+        .about { padding: 80px 10%; text-align: center; background: var(--bg-light); }
+        .about h2 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; color: var(--soref-blue); margin-bottom: 20px; }
+        .about p { font-size: 1.1rem; line-height: 1.8; color: #555; max-width: 900px; margin: 0 auto; }
 
         /* --- Gallery Section --- */
-        .gallery { padding: 80px 5%; background: #f9f9f9; }
+        .gallery { padding: 80px 5%; }
         .section-title { text-align: center; margin-bottom: 50px; font-family: 'Oswald', sans-serif; font-size: 2.5rem; color: var(--soref-blue); }
-        .section-title::after { content: ''; display: block; width: 80px; height: 5px; background: var(--soref-red); margin: 10px auto; }
+        .section-title span { color: var(--soref-red); }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .gallery-card { 
-            position: relative; height: 350px; border-radius: 15px; overflow: hidden; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: 2px solid var(--soref-blue);
-        }
+        .gallery-card { position: relative; height: 350px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-bottom: 5px solid var(--soref-red); }
         .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .gallery-card:hover img { transform: scale(1.1); }
-        .gallery-card .label { 
-            position: absolute; bottom: 0; width: 100%; padding: 20px;
-            background: linear-gradient(transparent, var(--soref-blue));
-            color: white; font-weight: bold; text-align: center;
-        }
+        .gallery-card .overlay { position: absolute; bottom: 0; width: 100%; padding: 20px; background: rgba(0, 51, 102, 0.9); color: white; text-align: center; }
 
         /* --- WhatsApp --- */
-        .wa-float {
-            position: fixed; bottom: 30px; right: 30px; background: #25d366;
-            width: 70px; height: 70px; border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 35px; color: white; z-index: 2000;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-decoration: none;
-        }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 35px; color: white; z-index: 2000; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-decoration: none; transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
 
-        footer { background: var(--soref-blue); color: white; padding: 50px 5%; text-align: center; border-top: 5px solid var(--soref-red); }
-        .contact-info { margin-bottom: 20px; font-size: 1.1rem; }
-        .contact-info i { color: var(--soref-red); margin-right: 10px; }
+        footer { background: var(--soref-blue); color: white; padding: 50px 5%; text-align: center; }
+        .contact-details { margin-bottom: 20px; }
+        .contact-details p { margin: 5px 0; }
+        .contact-details i { color: var(--soref-red); margin-right: 8px; }
 
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .logo-text { font-size: 18px; } }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <div class="logo-icon">S.R.F</div>
-            <div class="logo-text">REZGUI <span>FLUIDE</span></div>
+        <div class="logo-box">
+            <img src="https://i.ibb.co/wFghygMF/logo.png" alt="SOREF" class="logo-img">
+            <div class="logo-text">SOCIÉTÉ REZGUI <span>FLUIDE (SOREF)</span></div>
         </div>
-        <div style="color: white; font-weight: 600;" class="hide-mobile">
+        <div style="font-weight: bold; color: var(--soref-blue);" class="hide-mobile">
             <i class="fa fa-phone"></i> 55 725 217
         </div>
     </header>
 
     <section class="hero">
-        <h1>SOCIÉTÉ <span>SOREF</span></h1>
-        <p>L'expertise technique en Plomberie, Chauffage Central, Climatisation et Ventilation. Votre confort est notre métier.</p>
-        <a href="https://wa.me/21655725217" class="btn-call">CONTACTER UN EXPERT</a>
+        <h1>L'EXCELLENCE EN <span>FLUIDES</span></h1>
+        <p>Votre partenaire de confiance pour tous vos travaux de Plomberie, Chauffage Central, Climatisation et Ventilation en Tunisie.</p>
+        <a href="https://wa.me/21655725217" class="btn-contact">CONTACTER NOUS</a>
+    </section>
+
+    <section class="about">
+        <h2>Qui sommes-nous ?</h2>
+        <p>
+            La <strong>Société Rezgui Fluide (SOREF)</strong> est une entreprise Tunisienne spécialisée dans le domaine du génie climatique et hydraulique. 
+            Forts de notre expertise, nous accompagnons nos clients (particuliers et professionnels) dans la conception, l'installation et la maintenance de systèmes thermiques performants. 
+            Notre engagement : Qualité, Sécurité et Efficacité énergétique.
+        </p>
     </section>
 
     <section class="gallery">
-        <h2 class="section-title">NOS RÉALISATIONS</h2>
+        <h2 class="section-title">NOS <span>RÉALISATIONS</span></h2>
         <div class="gallery-grid">
             <div class="gallery-card">
                 <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800" alt="Chauffage">
-                <div class="label">Chauffage Central & Tuyauterie</div>
+                <div class="overlay">Installation Chauffage Central</div>
             </div>
             <div class="gallery-card">
-                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800" alt="Climatisation">
-                <div class="label">Climatisation Industrielle VRV</div>
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800" alt="Clim">
+                <div class="overlay">Climatisation Industrielle & VRV</div>
             </div>
             <div class="gallery-card">
                 <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800" alt="Plomberie">
-                <div class="label">Plomberie & Sanitaire</div>
+                <div class="overlay">Plomberie Sanitaire & Hydraulique</div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="contact-info">
+        <div class="contact-details">
+            <p><i class="fas fa-map-marker-alt"></i> Tunisie</p>
             <p><i class="fas fa-phone-alt"></i> +216 55 725 217</p>
             <p><i class="fas fa-envelope"></i> soref2011@gmail.com</p>
         </div>
-        <p style="opacity: 0.7; font-size: 0.9rem;">&copy; 2026 Société Rezgui Fluide - SOREF. Tous droits réservés.</p>
+        <p style="opacity: 0.6; font-size: 0.8rem;">&copy; 2026 SOREF - Société Rezgui Fluide. Design Professionnel.</p>
     </footer>
 
     <a href="https://wa.me/21655725217" class="wa-float" target="_blank">
