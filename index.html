@@ -70,4 +70,68 @@
         footer { background: var(--soref-blue); color: white; padding: 40px 8%; text-align: center; }
         .contact-box { margin-bottom: 20px; }
         .contact-box p { font-size: 1.1rem; margin: 10px 0; }
-        .contact-box i {
+        .contact-box i { color: var(--soref-red); margin-right: 10px; }
+
+        /* --- WhatsApp --- */
+        .whatsapp-btn {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25d366; color: white; width: 65px; height: 65px;
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-size: 35px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); z-index: 2000;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .logo-text { font-size: 18px; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/wFghygMF/logo.png" alt="Logo SOREF" class="logo-img">
+            <div class="logo-text">REZGUI <span>FLUIDE</span></div>
+        </div>
+        <div style="font-weight: bold; color: var(--soref-blue);">55 725 217</div>
+    </header>
+
+    <section class="hero">
+        <h1>SOCIÉTÉ <span>SOREF</span></h1>
+        <p>Spécialiste en Plomberie, Chauffage Central, Climatisation et Ventilation. Une expertise technique au service de votre confort.</p>
+        <a href="https://wa.me/21655725217" style="background: var(--soref-red); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold;">DEVIS GRATUIT</a>
+    </section>
+
+    <section class="gallery">
+        <h2 class="section-title">NOS <span>RÉALISATIONS</span></h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://i.ibb.co/rfRwvJN5/1.jpg" alt="Chantier SOREF"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/yF2Ykhnq/2.jpg" alt="Chantier SOREF"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/673mGcfj/3.jpg" alt="Chantier SOREF"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/N2Nn0CvL/4.jpg" alt="Chantier SOREF"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/S7RTRVqY/5.jpg" alt="Chantier SOREF"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/Z6VjV4s5/6.jpg" alt="Chantier SOREF"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/6c7LyVGg/7.jpg" alt="Chantier SOREF"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/C38VLnpy/8.jpg" alt="Chantier SOREF"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/VczSkjmb/9.jpg" alt="Chantier SOREF"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/1JYsQmFd/10.jpg" alt="Chantier SOREF"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/wbWVZbF/11.jpg" alt="Chantier SOREF"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/k65g0xP5/12.jpg" alt="Chantier SOREF"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="contact-box">
+            <p><i class="fas fa-phone-alt"></i> +216 55 725 217</p>
+            <p><i class="fas fa-envelope"></i> soref2011@gmail.com</p>
+        </div>
+        <p style="opacity: 0.6; font-size: 0.9rem;">&copy; 2026 Société Rezgui Fluide - SOREF. Tous droits réservés.</p>
+    </footer>
+
+    <a href="https://wa.me/21655725217" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
