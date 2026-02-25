@@ -3,185 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOREF | Ingénierie des Fluides</title>
+    <title>SOREF | Ingénierie des Fluides & Génie Thermique</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <style>
         :root {
-            --primary: #003366; /* Bleu SOREF */
-            --accent: #E31E24;  /* Rouge SOREF */
-            --dark: #0a0a0a;
-            --grey: #f4f4f4;
+            --soref-blue: #003366;
+            --soref-red: #E31E24;
+            --dark: #111111;
+            --light: #f9f9f9;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--dark); line-height: 1.6; }
+        body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--dark); scroll-behavior: smooth; }
 
-        /* --- Navigation --- */
-        nav {
-            padding: 20px 8%;
+        /* --- Header / Logo --- */
+        header {
+            padding: 15px 8%;
             display: flex; justify-content: space-between; align-items: center;
-            position: absolute; width: 100%; z-index: 1000;
+            background: #fff; position: sticky; top: 0; z-index: 2000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--soref-blue);
         }
-        .logo { font-weight: 800; font-size: 24px; color: #fff; letter-spacing: 2px; text-decoration: none; }
-        .nav-links a { color: #fff; text-decoration: none; margin-left: 30px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+        .logo-container { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-img { height: 60px; }
+        .logo-text { font-family: 'Oswald', sans-serif; font-size: 26px; color: var(--soref-blue); font-weight: 700; }
+        .logo-text span { color: var(--soref-red); }
 
-        /* --- Hero Section (Video Style) --- */
+        /* --- Hero --- */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/VczSkjmb/9.jpg');
+            height: 80vh;
+            background: linear-gradient(rgba(0,51,102,0.75), rgba(0,0,0,0.6)), url('https://i.ibb.co/VczSkjmb/9.jpg');
             background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; color: #fff;
+            display: flex; justify-content: center; align-items: center; text-align: center; color: #fff;
         }
-        .hero h1 { font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 20px; }
-        .hero p { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 5px; opacity: 0.8; }
-        .scroll-down { position: absolute; bottom: 30px; animation: bounce 2s infinite; color: #fff; font-size: 20px; }
+        .hero-content h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+        .hero-content p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; letter-spacing: 1px; font-weight: 300; }
 
-        /* --- Section Project (Style Luxe) --- */
-        .section { padding: 120px 8%; }
-        .section-header { margin-bottom: 80px; }
-        .section-header span { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 12px; }
-        .section-header h2 { font-size: 40px; font-weight: 800; margin-top: 10px; text-transform: uppercase; }
+        /* --- Présentation (Texte Officiel) --- */
+        .intro-section { padding: 100px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .intro-text h2 { font-family: 'Oswald', sans-serif; font-size: 35px; color: var(--soref-blue); margin-bottom: 25px; position: relative; }
+        .intro-text h2::after { content: ''; display: block; width: 60px; height: 4px; background: var(--soref-red); margin-top: 10px; }
+        .intro-text p { font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 20px; text-align: justify; }
 
-        .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
-        .project-card { position: relative; overflow: hidden; height: 500px; cursor: pointer; }
-        .project-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1); }
-        .project-card:hover img { transform: scale(1.05); }
+        /* --- Services --- */
+        .services { background: var(--light); padding: 100px 8%; }
+        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .service-card { background: #fff; padding: 40px; border-bottom: 4px solid var(--soref-blue); transition: 0.3s; }
+        .service-card:hover { transform: translateY(-10px); border-bottom-color: var(--soref-red); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .service-card i { font-size: 40px; color: var(--soref-blue); margin-bottom: 20px; }
+        .service-card h3 { font-family: 'Oswald', sans-serif; margin-bottom: 15px; color: var(--soref-blue); }
+
+        /* --- Projets (Portfolio) --- */
+        .projets { padding: 100px 8%; }
+        .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 50px; }
+        .project-item { position: relative; height: 450px; overflow: hidden; }
+        .project-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .project-item:hover img { transform: scale(1.1); }
         .project-overlay { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(0,0,0,0.2); display: flex; flex-direction: column; 
-            justify-content: flex-end; padding: 40px; color: #fff; 
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; 
+            background: linear-gradient(transparent, rgba(0,51,102,0.9)); color: #fff; 
         }
-        .project-overlay h3 { font-size: 24px; font-weight: 700; text-transform: uppercase; }
-        .project-overlay p { font-size: 14px; opacity: 0.8; }
-
-        /* --- Services (Minimalist) --- */
-        .services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 60px; }
-        .service-item h4 { font-size: 18px; font-weight: 700; margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 15px; text-transform: uppercase; }
-        .service-item p { font-size: 15px; color: #666; font-weight: 400; }
 
         /* --- Footer --- */
-        footer { background: var(--dark); color: #fff; padding: 100px 8% 50px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 100px; border-bottom: 1px solid #333; padding-bottom: 50px; }
-        .footer-logo { font-size: 30px; font-weight: 800; margin-bottom: 20px; }
-        .footer-links h5 { text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; color: var(--accent); }
-        .footer-links p { margin-bottom: 10px; font-size: 14px; opacity: 0.6; }
-        .copyright { padding-top: 30px; font-size: 12px; opacity: 0.4; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
+        footer { background: var(--soref-blue); color: #fff; padding: 80px 8% 40px; }
+        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; }
+        .footer-logo { font-family: 'Oswald', sans-serif; font-size: 30px; margin-bottom: 20px; }
+        .footer-col h4 { text-transform: uppercase; margin-bottom: 20px; color: var(--soref-red); font-family: 'Oswald'; }
+        .footer-col p { font-size: 14px; opacity: 0.8; margin-bottom: 10px; }
 
-        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
-        @media (max-width: 768px) { .project-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; gap: 40px; } }
+        @media (max-width: 992px) { .intro-section, .project-grid, .footer-content { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#" class="logo">SOREF.</a>
-        <div class="nav-links">
-            <a href="#projets">Projets</a>
-            <a href="#expertise">Expertise</a>
-            <a href="tel:55725217">Contact</a>
+    <header>
+        <a href="#" class="logo-container">
+            <img src="https://i.ibb.co/wFghygMF/logo.png" alt="SOREF" class="logo-img">
+            <div class="logo-text">SOREF <span>TUNISIE</span></div>
+        </a>
+        <div class="nav-contact">
+            <a href="tel:55725217" style="text-decoration:none; color:var(--soref-blue); font-weight:700;">
+                <i class="fas fa-phone-alt"></i> (+216) 55 725 217
+            </a>
         </div>
-    </nav>
+    </header>
 
     <section class="hero">
-        <p data-aos="fade-down">Génie Thermique & Fluides</p>
-        <h1 data-aos="fade-up">L'INGÉNIERIE <br> DE PRÉCISION</h1>
-        <div class="scroll-down"><i class="fa fa-chevron-down"></i></div>
+        <div class="hero-content" data-aos="zoom-out">
+            <h1>L'ART DE LA MAÎTRISE TECHNIQUE</h1>
+            <p>Agrément Ministériel B3 - Catégorie 3 | Depuis 2012</p>
+        </div>
     </section>
 
-    <section id="projets" class="section">
-        <div class="section-header" data-aos="fade-right">
-            <span>Portfolio</span>
-            <h2>Réalisations Iconiques</h2>
+    <section class="intro-section">
+        <div class="intro-text" data-aos="fade-right">
+            <h2>PRÉSENTATION DE L'ENTREPRISE</h2>
+            <p>Nous avons l’honneur de vous présenter notre Entreprise. Créée en 2012, <strong>SOREF</strong> est spécialisée dans les travaux de chauffage, climatisation, plomberie sanitaire, protection incendie, équipement électrique et traitement des eaux.</p>
+            <p>Ayant obtenu l’agrément du ministère de l’équipement et de l’habitat de type <strong>B3, catégorie 3</strong>, notre entreprise se place à un haut niveau de compétitivité pour répondre aux exigences techniques des grands projets.</p>
+            <p>Notre force réside dans notre personnel qualifié (12 permanents et une vingtaine de techniciens) équipé des outils les plus sophistiqués pour garantir une exécution parfaite et le respect des délais.</p>
         </div>
-        
+        <div class="intro-image" data-aos="fade-left">
+            <img src="https://i.ibb.co/6c7LyVGg/7.jpg" alt="Chantier SOREF" style="width:100%; border-radius:10px; box-shadow: 20px 20px 0 var(--soref-red);">
+        </div>
+    </section>
+
+    <section class="services">
+        <div style="text-align: center;" data-aos="fade-up">
+            <h2 style="font-family:'Oswald'; font-size:40px; color:var(--soref-blue);">NOS DOMAINES D'ACTIVITÉ</h2>
+            <div style="width:80px; height:4px; background:var(--soref-red); margin:15px auto;"></div>
+        </div>
+        <div class="grid-services">
+            <div class="service-card" data-aos="fade-up">
+                <i class="fas fa-snowflake"></i>
+                <h3>Génie Climatique</h3>
+                <p>Systèmes VRV, Mono-split Gainable réversible, Ventilation mécanique et extraction d'air.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-faucet"></i>
+                <h3>Plomberie & Fluides</h3>
+                <p>Installations sanitaires complètes, réseaux hydrauliques et traitement des eaux.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-fire-alt"></i>
+                <h3>Chauffage Central</h3>
+                <p>Chauffage par le sol, chaudières et réseaux thermiques pour résidences de luxe.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-swimming-pool"></i>
+                <h3>Piscine & Spa</h3>
+                <p>Équipement complet de locaux techniques pour piscines et filtration d'eau.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projets">
+        <div style="text-align: center;" data-aos="fade-up">
+            <h2 style="font-family:'Oswald'; font-size:40px; color:var(--soref-blue);">NOS RÉFÉRENCES</h2>
+            <p style="margin-top:10px; color:#666;">Découvrez nos chantiers et réalisations majeures.</p>
+        </div>
         <div class="project-grid">
-            <div class="project-card" data-aos="fade-up">
-                <img src="https://i.ibb.co/VczSkjmb/9.jpg" alt="Le Patio">
+            <div class="project-item" data-aos="fade-up">
+                <img src="https://i.ibb.co/VczSkjmb/9.jpg" alt="Le Patio Soukra">
                 <div class="project-overlay">
-                    <p>Résidentiel</p>
-                    <h3>Le Patio La Soukra</h3>
+                    <h3>Résidence Le Patio</h3>
+                    <p>La Soukra | Plomberie & Climatisation Gainable</p>
                 </div>
             </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-item" data-aos="fade-up" data-aos-delay="200">
                 <img src="https://i.ibb.co/rfRwvJN5/1.jpg" alt="Immeuble Karray">
                 <div class="project-overlay">
-                    <p>Tertiaire</p>
                     <h3>Immeuble Karray</h3>
+                    <p>Berges du Lac | Chauffage & Climatisation</p>
                 </div>
             </div>
-            <div class="project-card" data-aos="fade-up">
+            <div class="project-item" data-aos="fade-up">
                 <img src="https://i.ibb.co/yF2Ykhnq/2.jpg" alt="Clinique Taoufik">
                 <div class="project-overlay">
-                    <p>Santé</p>
                     <h3>Clinique Taoufik</h3>
+                    <p>Tunis | Rénovation Plomberie Sanitaire</p>
                 </div>
             </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://i.ibb.co/673mGcfj/3.jpg" alt="Villa Gammarth">
+            <div class="project-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://i.ibb.co/k65g0xP5/12.jpg" alt="Equipement piscine">
                 <div class="project-overlay">
-                    <p>Luxe</p>
                     <h3>Villas de Prestige</h3>
+                    <p>Gammarth & Marsa | Chauffage Sol & Piscines</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="expertise" class="section" style="background: var(--grey);">
-        <div class="section-header" data-aos="fade-right">
-            <span>Savoir-faire</span>
-            <h2>Nos Domaines d'Intervention</h2>
-        </div>
-        <div class="services-list">
-            <div class="service-item" data-aos="fade-up">
-                <h4>Génie Climatique</h4>
-                <p>Maîtrise complète des systèmes VRV, climatisation gainable et ventilation industrielle pour un confort optimal.</p>
-            </div>
-            <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                <h4>Chauffage de Luxe</h4>
-                <p>Expertise reconnue en planchers chauffants et installations thermiques complexes pour villas et immeubles.</p>
-            </div>
-            <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                <h4>Fluides & Plomberie</h4>
-                <p>Conception de réseaux hydrauliques haute performance et équipements de piscines (locaux techniques).</p>
-            </div>
-            <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-                <h4>Sécurité Incendie</h4>
-                <p>Installation de systèmes de protection et détection conformes aux normes de sécurité les plus strictes.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-grid">
+        <div class="footer-content">
             <div class="footer-col">
-                <div class="footer-logo">SOREF.</div>
-                <p style="opacity: 0.6; max-width: 400px;">Depuis 2012, nous transformons la vision de nos clients en réalités techniques durables. L'excellence au service du bâtiment.</p>
+                <div class="footer-logo">SOREF TUNISIE</div>
+                <p>Organisée pour affronter les travaux de grande importance en respectant la qualité et les délais.</p>
             </div>
-            <div class="footer-links">
-                <h5>Contact</h5>
-                <p>+216 55 725 217</p>
-                <p>soref2011@gmail.com</p>
-                <p>Tunis, Tunisie</p>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> soref2011@gmail.com</p>
+                <p><i class="fas fa-phone"></i> (+216) 55 725 217</p>
+                <p><i class="fas fa-map-marker-alt"></i> Tunis, Tunisie</p>
             </div>
-            <div class="footer-links">
-                <h5>Social</h5>
-                <p>LinkedIn</p>
-                <p>Instagram</p>
-                <p>Facebook</p>
+            <div class="footer-col">
+                <h4>Agrément</h4>
+                <p>Ministère de l'équipement</p>
+                <p>Type B3 | Catégorie 3</p>
             </div>
         </div>
-        <div class="copyright">
-            &copy; 2025 SOREF Ingénierie. All rights reserved.
+        <div style="text-align:center; padding-top:50px; opacity:0.5; font-size:12px;">
+            &copy; 2025 SOREF. Expert en Génie Thermique.
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script> AOS.init({ duration: 1200, once: true }); </script>
+    <script> AOS.init({ duration: 1000, once: true }); </script>
 
 </body>
 </html>
